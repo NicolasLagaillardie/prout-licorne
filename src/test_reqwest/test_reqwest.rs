@@ -21,14 +21,14 @@ async fn post() -> Result<reqwest::Response, Error> {
     return Ok(res);
 }
 
-pub fn main_test_get() {
+pub (crate) fn main_test_get() {
     trpl::block_on(async {
         let body = get().await;
         println!("body = {body:?}")
     });
 }
 
-pub fn main_test_post() {
+pub (crate) fn main_test_post() {
     trpl::block_on(async {
         let res = post().await;
         println!("res = {res:?}")
